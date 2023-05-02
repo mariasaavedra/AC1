@@ -6,8 +6,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        primary: ['edu_regular', ...defaultTheme.fontFamily.sans],
-        secondary: ['edu_light', ...defaultTheme.fontFamily.sans],
+        primary: ['edu_light', ...defaultTheme.fontFamily.sans],
+        secondary: ['edu_regular', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         tennis: '#EFFD53',

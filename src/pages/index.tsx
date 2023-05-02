@@ -27,7 +27,7 @@ export default function HomePage() {
       </nav>
       <article className='flex  flex-col '>
         {/* chapters */}
-        <ul className='my-16 flex justify-center py-8'>
+        <ul className='my-16 mt-12 flex justify-center py-8'>
           <li
             onClick={() => setBackground(BG.CH_1)}
             className='m-4 cursor-pointer'
@@ -49,8 +49,8 @@ export default function HomePage() {
         </ul>
         {/* sign-up */}
         <section className='my-16 flex flex-col text-center'>
-          <span className='my-2'>SIGN UP FOR ACCESS</span>
-          <div className='search-wrapper relative'>
+          <span className='my-8'>SIGN UP FOR ACCESS</span>
+          <div className='search-wrapper relative w-[80vw] max-w-sm self-center'>
             <input
               className='w-full border-white bg-transparent text-white placeholder-white'
               type='text'
