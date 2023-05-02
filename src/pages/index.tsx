@@ -52,11 +52,11 @@ export default function HomePage() {
           <span className='my-2'>SIGN UP FOR ACCESS</span>
           <div className='search-wrapper relative'>
             <input
-              className='w-full border-black'
+              className='w-full border-white bg-transparent text-white'
               type='text'
               placeholder='ENTER E-MAIL'
             ></input>
-            <button className='absolute bottom-0 right-2 top-0 border-l-[1px] border-black px-2 pl-4 text-center text-black'>
+            <button className='absolute bottom-0 right-2 top-0 border-l-[1px] border-white px-2 pl-4 text-center text-white'>
               JOIN
             </button>
           </div>
