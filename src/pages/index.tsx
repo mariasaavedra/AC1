@@ -33,8 +33,16 @@ export default function HomePage() {
         {/* sign-up */}
         <section className='my-16 flex flex-col text-center'>
           <span className='my-2'>SIGN UP FOR ACCESS</span>
-          <input type='text'></input>
-          <button className='my-2'>JOIN</button>
+          <div className='search-wrapper relative'>
+            <input
+              className='w-full border-black'
+              type='text'
+              placeholder='ENTER E-MAIL'
+            ></input>
+            <button className='absolute bottom-0 right-2 top-0 border-l-[1px] border-black px-2 pl-4 text-center text-black'>
+              JOIN
+            </button>
+          </div>
         </section>
         <Link className='my-16 flex flex-col text-center' href='/#'>
           PASSWORD
