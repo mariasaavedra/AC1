@@ -15,7 +15,7 @@ export default function HomePage() {
 
   return (
     <main
-      className=' ac-grid h-screen p-2 text-white'
+      className=' ac-grid absolute inset-0 h-screen p-2 text-white'
       style={{
         background: `url(${background}) no-repeat center center / cover`,
       }}
