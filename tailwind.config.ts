@@ -6,8 +6,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        primary: ['Blinker', ...defaultTheme.fontFamily.sans],
-        secondary: ['Cabin', ...defaultTheme.fontFamily.sans],
+        primary: ['edu_regular', ...defaultTheme.fontFamily.sans],
+        secondary: ['edu_light', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         tennis: '#EFFD53',

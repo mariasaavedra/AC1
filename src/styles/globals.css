@@ -42,6 +42,22 @@
       U+2215, U+FEFF, U+FFFD;
   }
 
+  @font-face {
+    font-family: 'edu_regular';
+    src: url('/fonts/edufavorit-regular-webfont.woff2') format('woff2'),
+      url('/fonts/edufavorit-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'edu_light';
+    src: url('/fonts/edufavorit-light-webfont.woff2') format('woff2'),
+      url('/fonts/edufavorit-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
   .cursor-newtab {
     cursor: url('/images/new-tab.png') 10 10, pointer;
   }
@@ -124,4 +140,8 @@
   to {
     transform: translateX(calc(-100% - 100px));
   }
+}
+
+svg {
+  width: 100px;
 }
