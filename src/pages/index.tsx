@@ -52,7 +52,7 @@ export default function HomePage() {
           <span className='my-2'>SIGN UP FOR ACCESS</span>
           <div className='search-wrapper relative'>
             <input
-              className='w-full border-white bg-transparent text-white'
+              className='w-full border-white bg-transparent text-white placeholder-white'
               type='text'
               placeholder='ENTER E-MAIL'
             ></input>
