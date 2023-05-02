@@ -1,7 +1,5 @@
 import * as React from 'react';
 
-import HomeSection from '@/components/HomeSection/HomeSection';
-
 /**
  * SVGR Support
  * Caveat: No React Props Type.
@@ -15,9 +13,5 @@ import HomeSection from '@/components/HomeSection/HomeSection';
 // to customize the default configuration.
 
 export default function HomePage() {
-  return (
-    <>
-      <HomeSection></HomeSection>
-    </>
-  );
+  return <>Home page</>;
 }
