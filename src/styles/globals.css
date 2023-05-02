@@ -133,15 +133,8 @@
     background-size: 0 2px, 100% 2px;
   }
 }
-@keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(calc(-100% - 100px));
-  }
-}
 
-svg {
-  width: 100px;
+.ac-grid {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }

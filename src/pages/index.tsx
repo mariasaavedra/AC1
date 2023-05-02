@@ -17,32 +17,32 @@ import Falcon from '@/components/Falcon/Falcon';
 
 export default function HomePage() {
   return (
-    <main className='p-2'>
+    <main className=' ac-grid h-screen  p-2'>
       {/*  header */}
       <nav className='flex justify-between'>
         <span>AC_1</span>
         <span>TECHNICAL APPAREL STUDIO</span>
       </nav>
-      {/* chapters */}
-      <ul className='flex justify-center py-8'>
-        <li>CH_1</li>
-        <li>CH_2</li>
-        <li>CH_3</li>
-      </ul>
-      {/* sign-up */}
-      <section className='my-4 flex flex-col text-center'>
-        <span>SIGN UP FOR ACCESS</span>
-        <input type='text'></input>
-        <button>JOIN</button>
-      </section>
-
-      {/* password link */}
-      <Link className='my-4 flex flex-col text-center' href='#'>
-        PASSWORD
-      </Link>
+      <article className='flex  flex-col '>
+        {/* chapters */}
+        <ul className='my-16 flex justify-center py-8'>
+          <li className='m-4'>CH_1</li>
+          <li className='m-4'>CH_2</li>
+          <li className='m-4'>CH_3</li>
+        </ul>
+        {/* sign-up */}
+        <section className='my-16 flex flex-col text-center'>
+          <span className='my-2'>SIGN UP FOR ACCESS</span>
+          <input type='text'></input>
+          <button className='my-2'>JOIN</button>
+        </section>
+        <Link className='my-16 flex flex-col text-center' href='/#'>
+          PASSWORD
+        </Link>
+      </article>
 
       {/* footer */}
-      <footer className='flex justify-between'>
+      <footer className='flex justify-between p-2'>
         <Falcon />
         <span>FOUNDERS CLUB</span>
       </footer>
