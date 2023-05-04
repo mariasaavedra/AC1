@@ -16,7 +16,7 @@ export default function HomePage() {
   return (
     <>
       <main
-        className='ac-grid relative z-10 h-full max-h-screen overflow-hidden p-8 text-white'
+        className='ac-grid relative z-10 h-full max-h-screen overflow-hidden p-4 text-white'
         // style={{
         //   background: `url(${background}) no-repeat center center / cover`,
         // }}
