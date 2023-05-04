@@ -16,7 +16,7 @@ export default function HomePage() {
   return (
     <>
       <main
-        className='ac-grid relative z-10 h-[100dvh] max-h-screen overflow-hidden p-4 text-white'
+        className='ac-grid relative z-10 h-[100dvh] max-h-screen overflow-hidden p-4 pt-2 text-white'
         // style={{
         //   background: `url(${background}) no-repeat center center / cover`,
         // }}
@@ -74,7 +74,7 @@ export default function HomePage() {
         </article>
 
         {/* footer */}
-        <footer className='z-5 flex justify-between p-2'>
+        <footer className='z-5 flex justify-between p-2 py-1'>
           <Falcon />
           <span className='text-sm'>FOUNDERS CLUB</span>
         </footer>
