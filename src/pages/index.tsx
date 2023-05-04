@@ -34,12 +34,6 @@ export default function HomePage() {
               className='m-4 flex cursor-pointer flex-col'
             >
               CH_1
-              <img
-                className='mt-4 self-end'
-                width='18px'
-                src='/images/speaker.svg'
-                alt='sound icon'
-              />
             </li>
             <li
               onClick={() => setBackground(BG.CH__2)}
@@ -49,9 +43,15 @@ export default function HomePage() {
             </li>
             <li
               onClick={() => setBackground(BG.CH__3)}
-              className='m-4 cursor-pointer'
+              className='m-4 flex cursor-pointer flex-col'
             >
               CH_3
+              <img
+                className='mt-4 self-end'
+                width='18px'
+                src='/images/speaker.svg'
+                alt='sound icon'
+              />
             </li>
           </ul>
           {/* sign-up */}
