@@ -42,15 +42,9 @@ export default function HomePage() {
           <ul className='relative my-16 mt-12 flex justify-center py-8'>
             <li
               onClick={() => setBackground(BG.CH__1)}
-              className='m-4 flex cursor-pointer flex-col'
+              className='m-4 cursor-pointer'
             >
               CH_1
-              <img
-                className='mt-4 self-end'
-                width='18px'
-                src='/images/speaker.svg'
-                alt='sound icon'
-              />
             </li>
             <li
               onClick={() => setBackground(BG.CH__2)}
