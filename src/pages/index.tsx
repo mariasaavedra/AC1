@@ -12,6 +12,7 @@ export default function HomePage() {
   };
 
   const [background, setBackground] = useState(BG.CH__1);
+  const [isMuted, setisMuted] = useState(true);
 
   return (
     <>
@@ -47,6 +48,9 @@ export default function HomePage() {
             >
               CH_3
               <img
+                onClick={() => {
+                  setisMuted((prev) => !prev);
+                }}
                 className='mt-4 self-end'
                 width='18px'
                 src='/images/speaker.svg'
@@ -64,11 +68,14 @@ export default function HomePage() {
                 placeholder='ENTER E-MAIL'
               ></input>
               <button className='absolute bottom-0 right-2 top-0 border-l-[1px] border-white px-2 pl-4 text-center text-xs text-white'>
-                JOIN
+                <Link href='/welcome'>JOIN</Link>
               </button>
             </div>
           </section>
-          <Link className='my-16 flex flex-col text-center text-sm' href='/#'>
+          <Link
+            className='my-16 flex flex-col text-center text-sm'
+            href='/password'
+          >
             PASSWORD
           </Link>
         </article>
@@ -81,7 +88,7 @@ export default function HomePage() {
       </main>
       <video
         autoPlay={true}
-        muted={true}
+        muted={isMuted}
         className='fixed bottom-0 left-0 right-0 top-0 z-0  min-h-screen object-cover'
         controls={false}
       >

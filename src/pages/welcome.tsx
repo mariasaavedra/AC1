@@ -15,19 +15,8 @@ export default function HomePage() {
 
   return (
     <div className='absolute inset-0'>
-      <video
-        autoPlay={true}
-        muted={true}
-        className='absolute z-0'
-        width='100%'
-        height='100%'
-        controls={false}
-      >
-        <source src='/video/CH1.mp4' type='video/mp4' />
-      </video>
-
       <main
-        className=' ac-grid h-full p-2 text-white '
+        className=' ac-grid h-full bg-black p-2 text-white'
         // style={{
         //   background: `url(${background}) no-repeat center center / cover`,
         // }}
@@ -38,43 +27,13 @@ export default function HomePage() {
           <span className='text-sm'>TECHNICAL APPAREL STUDIO</span>
         </nav>
         <article className='relative flex  flex-col '>
-          {/* chapters */}
-          <ul className='relative my-16 mt-12 flex justify-center py-8'>
-            <li
-              onClick={() => setBackground(BG.CH__1)}
-              className='m-4 cursor-pointer'
-            >
-              CH_1
-            </li>
-            <li
-              onClick={() => setBackground(BG.CH__2)}
-              className='m-4 cursor-pointer'
-            >
-              CH_2
-            </li>
-            <li
-              onClick={() => setBackground(BG.CH__3)}
-              className='m-4 cursor-pointer'
-            >
-              CH_3
-            </li>
-          </ul>
           {/* sign-up */}
           <section className='my-16 flex flex-col text-center'>
-            <span className='my-8 text-xs'>SIGN UP FOR ACCESS</span>
-            <div className='search-wrapper relative w-[80vw] max-w-sm self-center'>
-              <input
-                className='w-full border-white bg-transparent text-xs text-white placeholder-white'
-                type='text'
-                placeholder='ENTER E-MAIL'
-              ></input>
-              <button className='absolute bottom-0 right-2 top-0 border-l-[1px] border-white px-2 pl-4 text-center text-xs text-white'>
-                JOIN
-              </button>
-            </div>
+            <span className='my-8 text-xs'>WELCOME TO FOUNDERS CLUB</span>
+            <span className='my-8 text-xs'>PASSWORD EMAILED UPON LAUNCH</span>
           </section>
           <Link className='my-16 flex flex-col text-center text-sm' href='/#'>
-            PASSWORD
+            BACK
           </Link>
         </article>
 
