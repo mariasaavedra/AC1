@@ -16,7 +16,7 @@ export default function HomePage() {
   return (
     <>
       <main
-        className='ac-grid relative z-10 h-full min-h-screen overflow-hidden p-8 text-white'
+        className='ac-grid relative z-10 h-full max-h-screen overflow-hidden p-8 text-white'
         // style={{
         //   background: `url(${background}) no-repeat center center / cover`,
         // }}
@@ -28,7 +28,7 @@ export default function HomePage() {
         </nav>
         <article className='relative flex  flex-col '>
           {/* chapters */}
-          <ul className='relative my-16 mt-12 flex justify-center py-8'>
+          <ul className='relative my-8 mt-12 flex justify-center py-8'>
             <li
               onClick={() => setBackground(BG.CH__1)}
               className='m-4 flex cursor-pointer flex-col'
