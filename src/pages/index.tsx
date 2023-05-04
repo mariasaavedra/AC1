@@ -11,17 +11,26 @@ export default function HomePage() {
     CH__3: '/images/3.png',
   };
 
+  const speaker = {
+    unmuted: '/images/speaker.svg',
+    muted: '/images/speaker-muted.png',
+  };
+
   const [background, setBackground] = useState(BG.CH__1);
   const [isMuted, setisMuted] = useState(true);
+  const [speakerImg, setSpeakerImg] = useState('');
+
+  React.useEffect(() => {
+    if (isMuted) {
+      setSpeakerImg(speaker.muted);
+    } else {
+      setSpeakerImg(speaker.unmuted);
+    }
+  }, [isMuted]);
 
   return (
     <>
-      <main
-        className='ac-grid relative z-10 h-[100dvh] max-h-screen overflow-hidden p-4 pt-2 text-white'
-        // style={{
-        //   background: `url(${background}) no-repeat center center / cover`,
-        // }}
-      >
+      <main className='ac-grid relative z-10 h-[100dvh] max-h-screen overflow-hidden p-4 pt-2 text-white'>
         {/*  header */}
         <nav className='relative flex justify-between p-2'>
           <span className='text-sm'>AC__1</span>
@@ -53,7 +62,7 @@ export default function HomePage() {
                 }}
                 className='mt-4 self-end'
                 width='18px'
-                src='/images/speaker.svg'
+                src={speakerImg}
                 alt='sound icon'
               />
             </li>
