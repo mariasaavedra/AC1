@@ -44,19 +44,19 @@ export default function HomePage() {
               onClick={() => setBackground(BG.CH__1)}
               className='m-4 cursor-pointer'
             >
-              CH__1
+              CH_1
             </li>
             <li
               onClick={() => setBackground(BG.CH__2)}
               className='m-4 cursor-pointer'
             >
-              CH__2
+              CH_2
             </li>
             <li
               onClick={() => setBackground(BG.CH__3)}
               className='m-4 cursor-pointer'
             >
-              CH__3
+              CH_3
             </li>
           </ul>
           {/* sign-up */}
