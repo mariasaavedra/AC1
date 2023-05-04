@@ -22,7 +22,7 @@ export default function HomePage() {
         // }}
       >
         {/*  header */}
-        <nav className='relative  flex justify-between'>
+        <nav className='relative flex justify-between p-2'>
           <span className='text-sm'>AC__1</span>
           <span className='text-sm'>TECHNICAL APPAREL STUDIO</span>
         </nav>
