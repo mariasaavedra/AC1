@@ -14,26 +14,15 @@ export default function HomePage() {
   const [background, setBackground] = useState(BG.CH__1);
 
   return (
-    <div className='absolute inset-0'>
-      <video
-        autoPlay={true}
-        muted={true}
-        className='absolute z-0'
-        width='100%'
-        height='100%'
-        controls={false}
-      >
-        <source src='/video/CH1.mp4' type='video/mp4' />
-      </video>
-
+    <>
       <main
-        className=' ac-grid h-full overflow-hidden p-2 text-white '
+        className='ac-grid relative z-10 h-full min-h-screen overflow-hidden p-8 text-white'
         // style={{
         //   background: `url(${background}) no-repeat center center / cover`,
         // }}
       >
         {/*  header */}
-        <nav className='relative flex justify-between'>
+        <nav className='relative  flex justify-between'>
           <span className='text-sm'>AC__1</span>
           <span className='text-sm'>TECHNICAL APPAREL STUDIO</span>
         </nav>
@@ -90,6 +79,14 @@ export default function HomePage() {
           <span className='text-sm'>FOUNDERS CLUB</span>
         </footer>
       </main>
-    </div>
+      <video
+        autoPlay={true}
+        muted={true}
+        className='fixed bottom-0 left-0 right-0 top-0 z-0  min-h-screen object-cover'
+        controls={false}
+      >
+        <source src='/video/CH1.mp4' type='video/mp4' />
+      </video>
+    </>
   );
 }
