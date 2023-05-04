@@ -27,7 +27,7 @@ export default function HomePage() {
       </video>
 
       <main
-        className=' ac-grid h-full p-2 text-white '
+        className=' ac-grid h-full overflow-hidden p-2 text-white '
         // style={{
         //   background: `url(${background}) no-repeat center center / cover`,
         // }}
