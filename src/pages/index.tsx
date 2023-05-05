@@ -115,6 +115,7 @@ export default function HomePage() {
                         placeholder='ENTER E-MAIL'
                         className='required  email w-full border-white bg-transparent bg-transparent py-[13px] text-xs text-white placeholder-white'
                         id='mce-EMAIL'
+                        autoComplete='email'
                         required={true}
                       />
                       <span id='mce-EMAIL-HELPERTEXT' className='helper_text' />
