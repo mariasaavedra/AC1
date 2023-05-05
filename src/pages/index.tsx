@@ -46,27 +46,51 @@ export default function HomePage() {
               className='m-4 flex cursor-pointer flex-col'
             >
               CH_1
+              {background === BG.CH__1 && (
+                <img
+                  onClick={() => {
+                    setisMuted((prev) => !prev);
+                  }}
+                  className='mt-4 self-end'
+                  width='18px'
+                  src={speakerImg}
+                  alt='sound icon'
+                />
+              )}
             </li>
             <li
               onClick={() => setBackground(BG.CH__2)}
               className='m-4 cursor-pointer'
             >
               CH_2
+              {background === BG.CH__2 && (
+                <img
+                  onClick={() => {
+                    setisMuted((prev) => !prev);
+                  }}
+                  className='mt-4 self-end'
+                  width='18px'
+                  src={speakerImg}
+                  alt='sound icon'
+                />
+              )}
             </li>
             <li
               onClick={() => setBackground(BG.CH__3)}
               className='m-4 flex cursor-pointer flex-col'
             >
               CH_3
-              <img
-                onClick={() => {
-                  setisMuted((prev) => !prev);
-                }}
-                className='mt-4 self-end'
-                width='18px'
-                src={speakerImg}
-                alt='sound icon'
-              />
+              {background === BG.CH__3 && (
+                <img
+                  onClick={() => {
+                    setisMuted((prev) => !prev);
+                  }}
+                  className='mt-4 self-end'
+                  width='18px'
+                  src={speakerImg}
+                  alt='sound icon'
+                />
+              )}
             </li>
           </ul>
           {/* sign-up */}
