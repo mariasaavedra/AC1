@@ -7,8 +7,8 @@ import Falcon from '@/components/Falcon/Falcon';
 export default function HomePage() {
   const BG = {
     CH__1: '/video/CH1.mp4',
-    CH__2: '/images/2.png',
-    CH__3: '/images/3.png',
+    CH__2: '/video/CH2.mp4',
+    CH__3: '/video/CH3.mp4',
   };
 
   const speaker = {
@@ -16,7 +16,7 @@ export default function HomePage() {
     muted: '/images/speaker-muted.png',
   };
 
-  const [background, setBackground] = useState(BG.CH__1);
+  const [background, setBackground] = useState(BG.CH__3);
   const [isMuted, setisMuted] = useState(true);
   const [speakerImg, setSpeakerImg] = useState('');
 
@@ -40,7 +40,9 @@ export default function HomePage() {
           {/* chapters */}
           <ul className='relative my-8 mt-12 flex justify-center py-8'>
             <li
-              onClick={() => setBackground(BG.CH__1)}
+              onClick={() => {
+                setBackground(BG.CH__1);
+              }}
               className='m-4 flex cursor-pointer flex-col'
             >
               CH_1
@@ -97,12 +99,11 @@ export default function HomePage() {
       </main>
       <video
         autoPlay={true}
+        src={background}
         muted={isMuted}
         className='fixed bottom-0 left-0 right-0 top-0 z-0  min-h-screen object-cover'
         controls={false}
-      >
-        <source src='/video/CH1.mp4' type='video/mp4' />
-      </video>
+      ></video>
     </>
   );
 }
