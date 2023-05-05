@@ -21,26 +21,26 @@ export default function HomePage() {
   const [background, setBackground] = useState(BG.CH__1);
   const [isMuted, setisMuted] = useState(true);
   const [speakerImg, setSpeakerImg] = useState('');
-  const emailRef = React.useRef(null);
+  const emailRef = React.useRef<HTMLInputElement | null>(null);
   const videoRef = React.useRef(null);
   const router = useRouter();
 
-  function handleSubmit(e) {
+  function handleSubmit(e: any) {
     e.preventDefault();
+    let email;
+    if (emailRef.current) {
+      email = emailRef.current.value || '';
+    }
     const url =
       'https://gmail.us21.list-manage.com/subscribe/post-json?u=c850c15167457bd1a503cd522&id=0bea8341ff&f_id=00fa51e1f0';
-    jsonp(
-      `${url}&EMAIL=${emailRef.current.value}`,
-      { param: 'c' },
-      (_, data) => {
-        const { msg, result } = data;
-        if (result !== 'success') {
-          alert(msg);
-        } else {
-          router.push('/welcome');
-        }
+    jsonp(`${url}&EMAIL=${email}`, { param: 'c' }, (_, data) => {
+      const { msg, result } = data;
+      if (result !== 'success') {
+        alert(msg);
+      } else {
+        router.push('/welcome');
       }
-    );
+    });
   }
 
   React.useEffect(() => {
