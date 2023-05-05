@@ -35,12 +35,6 @@ export default function HomePage() {
     }
   }, [isMuted]);
 
-  React.useEffect(() => {
-    setTimeout(() => {
-      setisMuted(false);
-    }, 500);
-  });
-
   return (
     <>
       <main className='ac-grid relative z-10 h-[100dvh] max-h-screen overflow-hidden p-4 pt-2 text-white'>
