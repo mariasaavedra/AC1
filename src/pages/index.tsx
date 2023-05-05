@@ -30,6 +30,12 @@ export default function HomePage() {
     }
   }, [isMuted]);
 
+  React.useEffect(() => {
+    setTimeout(() => {
+      setisMuted(false);
+    }, 500);
+  });
+
   return (
     <>
       <main className='ac-grid relative z-10 h-[100dvh] max-h-screen overflow-hidden p-4 pt-2 text-white'>
@@ -109,7 +115,7 @@ export default function HomePage() {
       <video
         autoPlay={true}
         src={background}
-        muted={isMuted}
+        muted={true}
         playsInline={true}
         className='fixed bottom-0 left-0 right-0 top-0 z-0 min-h-screen w-screen object-cover'
       ></video>
