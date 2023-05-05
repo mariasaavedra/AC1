@@ -73,24 +73,62 @@ export default function HomePage() {
           <section className='my-16 flex flex-col text-center'>
             <span className='my-8 text-xs'>SIGN UP FOR ACCESS</span>
             <div className='search-wrapper relative w-[80vw] max-w-sm self-center'>
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  router.push('/welcome');
-                }}
-              >
-                <input
-                  className='w-full border-white bg-transparent text-xs text-white placeholder-white'
-                  type='text'
-                  placeholder='ENTER E-MAIL'
-                ></input>
-                <button
-                  type='submit'
-                  className='absolute bottom-0 right-2 top-0 border-l-[1px] border-white px-2 pl-4 text-center text-xs text-white'
+              <div id='mc_embed_signup'>
+                <form
+                  action='https://gmail.us21.list-manage.com/subscribe/post?u=c850c15167457bd1a503cd522&id=0bea8341ff&f_id=00fa51e1f0'
+                  method='post'
+                  id='mc-embedded-subscribe-form'
+                  name='mc-embedded-subscribe-form'
+                  className='validate'
+                  target='hiddenFrame'
                 >
-                  <Link href='/welcome'>JOIN</Link>
-                </button>
-              </form>
+                  <div id='mc_embed_signup_scroll'>
+                    <div className='mc-field-group'>
+                      <input
+                        type='email'
+                        name='EMAIL'
+                        placeholder='ENTER E-MAIL'
+                        className='required  email w-full border-white bg-transparent bg-transparent py-[13px] text-xs text-white placeholder-white'
+                        id='mce-EMAIL'
+                        required={true}
+                      />
+                      <span id='mce-EMAIL-HELPERTEXT' className='helper_text' />
+                      <input
+                        type='submit'
+                        value='JOIN'
+                        defaultValue='Subscribe'
+                        name='subscribe'
+                        id='mc-embedded-subscribe'
+                        className='button absolute bottom-0 right-2 top-0 border-l-[1px] border-white px-2 pl-4 text-center text-xs text-white'
+                      />
+                    </div>
+                    <div id='mce-responses' className='clear foot'>
+                      <div
+                        className='response'
+                        id='mce-error-response'
+                        style={{ display: 'none' }}
+                      />
+                      <div
+                        className='response'
+                        id='mce-success-response'
+                        style={{ display: 'none' }}
+                      />
+                    </div>{' '}
+                    {/* real people should not fill this in and expect good things - do not remove this or risk form bot signups*/}
+                    <div
+                      style={{ position: 'absolute', left: '-5000px' }}
+                      aria-hidden='true'
+                    >
+                      <input
+                        type='text'
+                        name='b_c850c15167457bd1a503cd522_0bea8341ff'
+                        tabIndex={-1}
+                        defaultValue=''
+                      />
+                    </div>
+                  </div>
+                </form>
+              </div>
             </div>
           </section>
           <Link
