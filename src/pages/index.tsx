@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import * as React from 'react';
 import { useState } from 'react';
 
@@ -19,6 +20,7 @@ export default function HomePage() {
   const [background, setBackground] = useState(BG.CH__1);
   const [isMuted, setisMuted] = useState(true);
   const [speakerImg, setSpeakerImg] = useState('');
+  const router = useRouter();
 
   React.useEffect(() => {
     if (isMuted) {
@@ -70,17 +72,24 @@ export default function HomePage() {
           <section className='my-16 flex flex-col text-center'>
             <span className='my-8 text-xs'>SIGN UP FOR ACCESS</span>
             <div className='search-wrapper relative w-[80vw] max-w-sm self-center'>
-              <input
-                className='w-full border-white bg-transparent text-xs text-white placeholder-white'
-                type='text'
-                placeholder='ENTER E-MAIL'
-              ></input>
-              <button
-                type='submit'
-                className='absolute bottom-0 right-2 top-0 border-l-[1px] border-white px-2 pl-4 text-center text-xs text-white'
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  router.push('/welcome');
+                }}
               >
-                <Link href='/welcome'>JOIN</Link>
-              </button>
+                <input
+                  className='w-full border-white bg-transparent text-xs text-white placeholder-white'
+                  type='text'
+                  placeholder='ENTER E-MAIL'
+                ></input>
+                <button
+                  type='submit'
+                  className='absolute bottom-0 right-2 top-0 border-l-[1px] border-white px-2 pl-4 text-center text-xs text-white'
+                >
+                  <Link href='/welcome'>JOIN</Link>
+                </button>
+              </form>
             </div>
           </section>
           <Link
