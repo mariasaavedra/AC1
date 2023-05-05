@@ -20,18 +20,30 @@ export default function HomePage() {
         <span className='text-sm'>AC__1</span>
         <span className='text-sm'>TECHNICAL APPAREL STUDIO</span>
       </nav>
-      <article className='relative flex flex-col '>
+      <article className='relative flex  flex-col items-center  self-center '>
         {/* sign-up */}
-        <section className='my-16 flex flex-col text-center'>
+        <section className='w-md my-16 flex flex-col text-center'>
           <span className='my-8 text-xs'>PASSWORD</span>
-          <input
-            className='w-full border-white bg-transparent text-xs text-white placeholder-white'
-            type='password'
-          ></input>
+          <div className='relative'>
+            <input
+              className='w-[100%] min-w-[300px] border-white bg-transparent text-xs text-white placeholder-white'
+              type='password'
+            ></input>
+            <button
+              type='submit'
+              className='absolute bottom-0 right-2 top-0 border-l-[1px] border-white px-2 pl-4 text-center text-xs text-white'
+            >
+              <Link href='/welcome'>LOGIN</Link>
+            </button>
+          </div>
+
+          <Link
+            className='my-16 mt-32 flex flex-col text-center text-sm'
+            href='/'
+          >
+            BACK
+          </Link>
         </section>
-        <Link className='my-16 flex flex-col text-center text-sm' href='/'>
-          BACK
-        </Link>
       </article>
 
       {/* footer */}
