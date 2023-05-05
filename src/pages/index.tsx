@@ -99,7 +99,6 @@ export default function HomePage() {
                       <input
                         type='submit'
                         value='JOIN'
-                        defaultValue='Subscribe'
                         name='subscribe'
                         id='mc-embedded-subscribe'
                         className='button absolute bottom-0 right-2 top-0 border-l-[1px] border-white px-2 pl-4 text-center text-xs text-white'
@@ -126,7 +125,6 @@ export default function HomePage() {
                         type='text'
                         name='b_c850c15167457bd1a503cd522_0bea8341ff'
                         tabIndex={-1}
-                        defaultValue=''
                       />
                     </div>
                   </div>
