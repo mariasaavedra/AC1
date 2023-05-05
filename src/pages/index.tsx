@@ -16,7 +16,7 @@ export default function HomePage() {
     muted: '/images/speaker-muted.png',
   };
 
-  const [background, setBackground] = useState(BG.CH__3);
+  const [background, setBackground] = useState(BG.CH__1);
   const [isMuted, setisMuted] = useState(true);
   const [speakerImg, setSpeakerImg] = useState('');
 
@@ -78,7 +78,10 @@ export default function HomePage() {
                 type='text'
                 placeholder='ENTER E-MAIL'
               ></input>
-              <button className='absolute bottom-0 right-2 top-0 border-l-[1px] border-white px-2 pl-4 text-center text-xs text-white'>
+              <button
+                type='submit'
+                className='absolute bottom-0 right-2 top-0 border-l-[1px] border-white px-2 pl-4 text-center text-xs text-white'
+              >
                 <Link href='/welcome'>JOIN</Link>
               </button>
             </div>
@@ -101,7 +104,7 @@ export default function HomePage() {
         autoPlay={true}
         src={background}
         muted={isMuted}
-        className='fixed bottom-0 left-0 right-0 top-0 z-0  min-h-screen object-cover'
+        className='fixed bottom-0 left-0 right-0 top-0 z-0 min-h-screen w-screen object-cover'
       ></video>
     </>
   );
