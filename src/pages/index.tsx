@@ -110,6 +110,7 @@ export default function HomePage() {
         autoPlay={true}
         src={background}
         muted={isMuted}
+        playsInline={true}
         className='fixed bottom-0 left-0 right-0 top-0 z-0 min-h-screen w-screen object-cover'
       ></video>
     </>
