@@ -24,10 +24,6 @@ export default function HomePage() {
   const videoRef = React.useRef(undefined);
 
   React.useEffect(() => {
-    videoRef.current.defaultMuted = true;
-  });
-
-  React.useEffect(() => {
     if (isMuted) {
       setSpeakerImg(speaker.muted);
     } else {
