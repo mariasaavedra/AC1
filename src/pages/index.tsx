@@ -36,7 +36,10 @@ export default function HomePage() {
       <main className='ac-grid relative z-10 h-[100dvh] max-h-screen overflow-hidden p-4 pt-2 text-white'>
         {/*  header */}
         <nav className='relative flex justify-between p-2'>
-          <span className='text-sm'>AC__1</span>
+          <Link href='/'>
+            <span className='text-sm'>AC__1</span>
+          </Link>
+
           <span className='text-sm'>TECHNICAL APPAREL STUDIO</span>
         </nav>
         <article className='relative flex  flex-col '>
