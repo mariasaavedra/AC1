@@ -102,7 +102,6 @@ export default function HomePage() {
         src={background}
         muted={isMuted}
         className='fixed bottom-0 left-0 right-0 top-0 z-0  min-h-screen object-cover'
-        controls={false}
       ></video>
     </>
   );
