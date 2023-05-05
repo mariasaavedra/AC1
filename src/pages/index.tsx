@@ -27,6 +27,7 @@ export default function HomePage() {
 
   function handleSubmit(e: any) {
     e.preventDefault();
+
     let email;
     if (emailRef.current) {
       email = emailRef.current.value || '';
