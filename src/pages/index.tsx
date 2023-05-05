@@ -53,11 +53,8 @@ export default function HomePage() {
             >
               CH_2
             </li>
-            <li
-              onClick={() => setBackground(BG.CH__3)}
-              className='m-4 flex cursor-pointer flex-col'
-            >
-              CH_3
+            <li className='m-4 flex cursor-pointer flex-col'>
+              <span onClick={() => setBackground(BG.CH__3)}>CH_3</span>
               <img
                 onClick={() => {
                   setisMuted((prev) => !prev);
