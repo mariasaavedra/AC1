@@ -21,6 +21,11 @@ export default function HomePage() {
   const [isMuted, setisMuted] = useState(true);
   const [speakerImg, setSpeakerImg] = useState('');
   const router = useRouter();
+  const videoRef = React.useRef(undefined);
+
+  React.useEffect(() => {
+    videoRef.current.defaultMuted = true;
+  });
 
   React.useEffect(() => {
     if (isMuted) {
@@ -113,6 +118,7 @@ export default function HomePage() {
         </footer>
       </main>
       <video
+        ref={videoRef}
         autoPlay={true}
         src={background}
         muted={isMuted}
