@@ -1,3 +1,4 @@
+import jsonp from 'jsonp';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import * as React from 'react';
@@ -20,8 +21,27 @@ export default function HomePage() {
   const [background, setBackground] = useState(BG.CH__1);
   const [isMuted, setisMuted] = useState(true);
   const [speakerImg, setSpeakerImg] = useState('');
-  const router = useRouter();
+  const emailRef = React.useRef(null);
   const videoRef = React.useRef(null);
+  const router = useRouter();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const url =
+      'https://gmail.us21.list-manage.com/subscribe/post-json?u=c850c15167457bd1a503cd522&id=0bea8341ff&f_id=00fa51e1f0';
+    jsonp(
+      `${url}&EMAIL=${emailRef.current.value}`,
+      { param: 'c' },
+      (_, data) => {
+        const { msg, result } = data;
+        if (result !== 'success') {
+          alert(msg);
+        } else {
+          router.push('/welcome');
+        }
+      }
+    );
+  }
 
   React.useEffect(() => {
     if (isMuted) {
@@ -78,17 +98,19 @@ export default function HomePage() {
             <div className='search-wrapper relative w-[80vw] max-w-sm self-center'>
               <div id='mc_embed_signup'>
                 <form
-                  action='https://gmail.us21.list-manage.com/subscribe/post?u=c850c15167457bd1a503cd522&id=0bea8341ff&f_id=00fa51e1f0'
+                  action='https://gmail.us21.list-manage.com/subscribe/post-json?u=c850c15167457bd1a503cd522&id=0bea8341ff&f_id=00fa51e1f0'
                   method='post'
                   id='mc-embedded-subscribe-form'
                   name='mc-embedded-subscribe-form'
                   className='validate'
                   target='hiddenFrame'
+                  onSubmit={handleSubmit}
                 >
                   <div id='mc_embed_signup_scroll'>
                     <div className='mc-field-group'>
                       <input
                         type='email'
+                        ref={emailRef}
                         name='EMAIL'
                         placeholder='ENTER E-MAIL'
                         className='required  email w-full border-white bg-transparent bg-transparent py-[13px] text-xs text-white placeholder-white'
