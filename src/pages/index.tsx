@@ -21,7 +21,7 @@ export default function HomePage() {
   const [isMuted, setisMuted] = useState(true);
   const [speakerImg, setSpeakerImg] = useState('');
   const router = useRouter();
-  const videoRef = React.useRef(undefined);
+  const videoRef = React.useRef(null);
 
   React.useEffect(() => {
     if (isMuted) {
