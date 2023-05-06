@@ -50,7 +50,7 @@ export default function HomePage() {
     } else {
       setSpeakerImg(speaker.unmuted);
     }
-  }, [isMuted]);
+  }, [isMuted, speaker.muted, speaker.unmuted]);
 
   return (
     <>
@@ -171,12 +171,14 @@ export default function HomePage() {
         </footer>
       </main>
       <video
+        preload='none'
         ref={videoRef}
         autoPlay={true}
+        poster='/video/CH1.jpeg'
         src={background}
         muted={isMuted}
         playsInline={true}
-        className='fixed bottom-0 left-0 right-0 top-0 z-0 min-h-screen w-screen object-cover'
+        className='lazy fixed bottom-0 left-0 right-0 top-0 z-0 min-h-screen w-screen object-cover'
       ></video>
     </>
   );
