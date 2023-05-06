@@ -1,10 +1,12 @@
-import jsonp from 'jsonp';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+// import Footer from '@/components/Footer/Footer';
+import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import * as React from 'react';
 import { useState } from 'react';
 
-import Falcon from '@/components/Falcon/Falcon';
+// import Form from '@/components/Form/Form';
+// import Navbar from '@/components/Navbar/Navbar';
+// import Password from '@/components/Password/Password';
 
 export default function HomePage() {
   const BG = {
@@ -20,49 +22,26 @@ export default function HomePage() {
 
   const [background, setBackground] = useState(BG.CH__1);
   const [isMuted, setisMuted] = useState(true);
-  const [speakerImg, setSpeakerImg] = useState('');
-  const emailRef = React.useRef<HTMLInputElement | null>(null);
+
+  const Navbar = dynamic(() =>
+    import('@/components/Navbar/Navbar').then((mod) => mod)
+  );
+  const Form = dynamic(() =>
+    import('@/components/Form/Form').then((mod) => mod)
+  );
+  const Password = dynamic(() =>
+    import('@/components/Password/Password').then((mod) => mod)
+  );
+  const Footer = dynamic(() =>
+    import('@/components/Footer/Footer').then((mod) => mod)
+  );
+
   const videoRef = React.useRef(null);
-  const router = useRouter();
-
-  function handleSubmit(e: any) {
-    e.preventDefault();
-
-    let email;
-    if (emailRef.current) {
-      email = emailRef.current.value || '';
-    }
-    const url =
-      'https://gmail.us21.list-manage.com/subscribe/post-json?u=c850c15167457bd1a503cd522&id=0bea8341ff&f_id=00fa51e1f0';
-    jsonp(`${url}&EMAIL=${email}`, { param: 'c' }, (_, data) => {
-      const { msg, result } = data;
-      if (result !== 'success') {
-        alert(msg);
-      } else {
-        router.push('/welcome');
-      }
-    });
-  }
-
-  React.useEffect(() => {
-    if (isMuted) {
-      setSpeakerImg(speaker.muted);
-    } else {
-      setSpeakerImg(speaker.unmuted);
-    }
-  }, [isMuted, speaker.muted, speaker.unmuted]);
 
   return (
     <>
       <main className='ac-grid relative z-10 h-[100dvh] max-h-screen overflow-hidden p-4 pt-2 text-white'>
-        {/*  header */}
-        <nav className='relative flex justify-between p-2'>
-          <Link href='/'>
-            <span className='text-sm'>AC__1</span>
-          </Link>
-
-          <span className='text-sm'>TECHNICAL APPAREL STUDIO</span>
-        </nav>
+        <Navbar />
         <article className='relative flex  flex-col '>
           {/* chapters */}
           <ul className='relative my-8 mt-12 flex justify-center py-8'>
@@ -82,93 +61,37 @@ export default function HomePage() {
             </li>
             <li className='m-4 flex cursor-pointer flex-col'>
               <span onClick={() => setBackground(BG.CH__3)}>CH_3</span>
-              <img
-                onClick={() => {
-                  setisMuted((prev) => !prev);
-                }}
-                className='mt-4 self-end'
-                width='18px'
-                src={speakerImg}
-                alt='sound icon'
-              />
+              {isMuted ? (
+                <Image
+                  onClick={() => {
+                    setisMuted((prev) => !prev);
+                  }}
+                  className='mt-4 self-end'
+                  width={18}
+                  height={18}
+                  src={speaker.muted}
+                  alt='sound icon'
+                />
+              ) : (
+                <Image
+                  onClick={() => {
+                    setisMuted((prev) => !prev);
+                  }}
+                  className='mt-4 self-end'
+                  width={18}
+                  height={18}
+                  src={speaker.unmuted}
+                  alt='sound icon'
+                />
+              )}
             </li>
           </ul>
-          {/* sign-up */}
-          <section className='my-16 flex flex-col text-center'>
-            <span className='my-8 text-xs'>SIGN UP FOR ACCESS</span>
-            <div className='search-wrapper relative w-[80vw] max-w-sm self-center'>
-              <div id='mc_embed_signup'>
-                <form
-                  action='https://gmail.us21.list-manage.com/subscribe/post-json?u=c850c15167457bd1a503cd522&id=0bea8341ff&f_id=00fa51e1f0'
-                  method='post'
-                  id='mc-embedded-subscribe-form'
-                  name='mc-embedded-subscribe-form'
-                  className='validate'
-                  target='hiddenFrame'
-                  onSubmit={handleSubmit}
-                >
-                  <div id='mc_embed_signup_scroll'>
-                    <div className='mc-field-group'>
-                      <input
-                        type='email'
-                        ref={emailRef}
-                        name='EMAIL'
-                        placeholder='ENTER E-MAIL'
-                        className='required  email w-full border-white bg-transparent bg-transparent py-[13px] text-xs text-white placeholder-white'
-                        id='mce-EMAIL'
-                        autoComplete='email'
-                        required={true}
-                      />
-                      <span id='mce-EMAIL-HELPERTEXT' className='helper_text' />
-                      <input
-                        type='submit'
-                        value='JOIN'
-                        name='subscribe'
-                        id='mc-embedded-subscribe'
-                        className='button absolute bottom-0 right-2 top-0 border-l-[1px] border-white px-2 pl-4 text-center text-xs text-white'
-                      />
-                    </div>
-                    <div id='mce-responses' className='clear foot'>
-                      <div
-                        className='response'
-                        id='mce-error-response'
-                        style={{ display: 'none' }}
-                      />
-                      <div
-                        className='response'
-                        id='mce-success-response'
-                        style={{ display: 'none' }}
-                      />
-                    </div>{' '}
-                    {/* real people should not fill this in and expect good things - do not remove this or risk form bot signups*/}
-                    <div
-                      style={{ position: 'absolute', left: '-5000px' }}
-                      aria-hidden='true'
-                    >
-                      <input
-                        type='text'
-                        name='b_c850c15167457bd1a503cd522_0bea8341ff'
-                        tabIndex={-1}
-                      />
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </section>
-          <Link
-            className='my-16 flex flex-col text-center text-sm'
-            href='/password'
-          >
-            PASSWORD
-          </Link>
+          <Form />
+          <Password />
         </article>
 
         {/* footer */}
-        <footer className='z-5 flex justify-between p-2 py-1'>
-          <Falcon />
-          <span className='text-sm'>FOUNDERS CLUB</span>
-        </footer>
+        <Footer />
       </main>
       <video
         preload='none'
