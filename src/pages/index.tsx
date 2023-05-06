@@ -93,7 +93,6 @@ export default function HomePage() {
         preload='none'
         ref={videoRef}
         autoPlay={true}
-        poster='/video/CH1.jpeg'
         src={background}
         muted={isMuted}
         playsInline={true}
