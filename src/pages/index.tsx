@@ -4,10 +4,6 @@ import Image from 'next/image';
 import * as React from 'react';
 import { useState } from 'react';
 
-// import Form from '@/components/Form/Form';
-// import Navbar from '@/components/Navbar/Navbar';
-// import Password from '@/components/Password/Password';
-
 export default function HomePage() {
   const BG = {
     CH__1: '/video/CH1.mp4',
